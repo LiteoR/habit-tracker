@@ -9,9 +9,6 @@ dist/
 web-build/
 expo-env.d.ts
 
-# Ide
-.vscode
-
 # Native
 .kotlin/
 *.orig.*
@@ -42,3 +39,4 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+/.vscode/
