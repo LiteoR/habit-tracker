@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs } from 'expo-router';
+import { Redirect, Tabs } from 'expo-router';
 import { Colors } from '@/src/constants/theme';
 import { useColorScheme } from '@/src/hooks/use-color-scheme';
 import Ionicons from '@expo/vector-icons/Ionicons';
@@ -7,12 +7,17 @@ import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import Feather from '@expo/vector-icons/Feather';
 
 export default function TabLayout() {
+  const hasFinishedOnboarding = false;
   const colorScheme = useColorScheme();
+  
+  if (!hasFinishedOnboarding) {
+    return <Redirect href={'/onboarding'} />
+  }
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: Colors[colorScheme].tabIconSelected,
         headerShown: false,
       }}
     >
